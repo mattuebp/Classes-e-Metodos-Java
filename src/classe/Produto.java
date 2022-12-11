@@ -3,15 +3,18 @@ public class Produto {
 
     String nome;
     double preco;
-    double desconto;
-
-    Produto(String nomeInicial, double precoInicial, double descontoInicial) {
-        nome = nomeInicial;
-        preco = precoInicial;
-        desconto = descontoInicial;
-    }
+    static double desconto = 0.25;
 
     Produto(){ // Construtor padrão definido de forma explícita;
 
+    }
+
+    Produto(String nomeInicial, double precoInicial) {
+        nome = nomeInicial;
+        preco = precoInicial;
+    }
+
+    double precoComDesconto() {
+        return preco * (1 - desconto);
     }
 }
